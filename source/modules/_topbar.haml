@@ -1,0 +1,29 @@
+.topbar
+  .title Wardrobe
+  %nav.float-right
+    %ul
+      - if locals[:nav_items]
+        - nav_items.each do |nav_item|
+          %li= link_to nav_item, "#"
+      - else
+        %li= link_to "Menu Item One", "#"
+        %li= link_to "Menu Item Two", "#"
+        %li
+          = link_to "#", class: "icon-after caret-down" do
+            More Menu
+            %span.badge 42
+          %ul.submenu
+            %li= link_to "dropdown item 1", "#"
+            %li= link_to "dropdown item 2", "#"
+            %li
+              = link_to "dropdown item 3", "#", class: "icon-after right"
+              %ul
+                %li= link_to "flyout 1", "#"
+                %li= link_to "flyout 2", "#"
+                %li= link_to "flyout 3", "#"
+            %li
+              = link_to "#" do
+                dropdown item 4
+                %span.badge 42
+      %li.search#typeahead
+        %input(type="text" placeholder="search")

@@ -1,0 +1,19 @@
+$input_types: (
+  text,
+  search,
+  password,
+  email
+);
+
+input {
+  @each $type in $input_types {
+    &[type="#{$type}"] {
+      @include transition(.2s);
+      @include box-shadow(none);
+      &:focus {
+        outline: none;
+        @include box-shadow(0 0 2px $primary-color);
+      }
+    }
+  }
+}

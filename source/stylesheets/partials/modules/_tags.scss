@@ -1,0 +1,20 @@
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  color: $slate;
+  background: $ghost;
+  border: 1px solid $light-grey;
+  padding: 3px 5px;
+  margin-right: 5px;
+  .text-right & {
+    margin-right: 0;
+    margin-left: 5px;
+  }
+  @extend .radius;
+  a {
+    @extend .icon;
+    @include icon-font($times-circle);
+    color: $slate;
+    margin-left: 3px;
+  }
+}

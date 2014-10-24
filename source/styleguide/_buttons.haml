@@ -1,0 +1,30 @@
+#buttons.wardrobe-content-section
+  :markdown
+    ## Buttons
+
+    Wardrobe has a button Sass mixin that is simple and controls color. The button can be modified with Semantic classes to change the color. Icons can be added to the beginning of the text or used alone. See the `_buttons.scss` partial for available icon buttons and when adding new icon buttons, add them there.
+
+  = link_to "Normal Button", "#", class: "button"
+  = link_to ".white button", "#", class: "white button"
+  = link_to ".primary button", "#", class: "primary button"
+  = link_to ".success button", "#", class: "success button"
+  = link_to ".warning button", "#", class: "warning button"
+  %br
+  %br
+  = link_to ".error button", "#", class: "error button"
+  = link_to "", "#", class: "icon star button"
+
+  .push-top
+  :markdown
+    #### Usage
+
+    ~~~haml
+    = link_to "Normal Button", "#", class: "button"
+    = link_to ".white button", "#", class: "white button"
+    = link_to ".primary button", "#", class: "primary button"
+    = link_to ".success button", "#", class: "success button"
+    = link_to ".warning button", "#", class: "warning button"
+    = link_to ".error button", "#", class: "error button"
+    = link_to "", "#", class: "icon star button"
+    ~~~
+

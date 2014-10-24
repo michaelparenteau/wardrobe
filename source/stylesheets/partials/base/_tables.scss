@@ -1,0 +1,101 @@
+table {
+  font-size: .75em;
+  width: 100%;
+  td, th {
+    text-align: left;
+    padding: 5px;
+  }
+  tr {
+    border-bottom: 1px solid $border-color;
+  }
+  &.bordered {
+    border-top: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+    td {
+      border-right: 1px solid $border-color;
+    }
+  }
+  &.striped {
+    thead tr th {
+      background: darken($ghost, 5%);
+      color: $slate;
+      border: 1px solid darken($ghost, 10%);
+      border-right: none;
+      &:last-child {
+        border-right: 1px solid darken($ghost, 10%);
+      }
+    }
+    tbody tr:nth-child(even) {
+      background: $ghost;
+    }
+  }
+  &.left-heading {
+    border-top: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+    th {
+      color: $slate;
+      background: $ghost;
+      font-weight: $heading-font-weight;
+      border-right: 1px solid $border-color;
+    }
+    &.striped {
+      tr {
+        th {
+          border-bottom: 1px solid darken($ghost, 10%);
+          border-right: 1px solid darken($ghost, 10%);
+        }
+        &:nth-child(even) th {
+          background: darken($ghost, 5%);
+        }
+        &:last-child th {
+          border-bottom: 1px solid $border-color;
+        }
+      }
+    }
+    td:last-child {
+      border-right: 1px solid $border-color;
+    }
+  }
+}
+
+table.sortable {
+  thead {
+    th {
+      padding-right: 30px;
+      position: relative;
+      @extend .icon;
+      @include icon-font($sort);
+      @include transition(.2s);
+      &.sort-up { @include icon-font($sort-up); }
+      &.sort-down { @include icon-font($sort-down); }
+      &:before {
+        position: absolute;
+        right: 5px;
+        top: 8px;
+      }
+      &:hover {
+        cursor: pointer;
+        background: darken($ghost, 3%);
+      }
+    }
+  }
+}
+
+
+.table-overflow-wrap {
+  width: 100%;
+  overflow-x: auto;
+  table {
+    min-width: 600px;
+    white-space: nowrap;
+    tr, td, th {
+      transition: background .1s;
+    }
+    tbody tr:hover {
+      tr, td, th, &:nth-child(even) th {
+        background: $highlighter-color;
+        cursor: default;
+      }
+    }
+  }
+}

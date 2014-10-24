@@ -1,0 +1,85 @@
+#typography.wardrobe-content-section
+  :markdown
+    ## Typography &amp; Helpers
+
+    ### Fonts
+
+    The default font for headings and body text is [Open Sans](http://www.google.com/fonts/specimen/Open+Sans) and is served via Google Fonts. There are a number of utility classes that we can use to alter the appearance of the text.
+
+    Here is an example of all the headings, `h1, h2, h3, h4, h5, h6`, with a `<span class="text-secondary small">` and `<span class="text-secondary tiny">` inside of them. The `.small` class cuts the `font-size` down to `0.75em` and `.tiny` to `0.5em`. The `.text-secondary` class changes the color. There are a number of other semantic colors available in the helpers below.
+
+    # Heading 1 <span class="text-secondary small">(span.small)</span> <span class="text-secondary tiny">(span.tiny)</span> `H1`
+
+    ## Heading 2 <span class="text-secondary small">(span.small)</span> <span class="text-secondary tiny">(span.tiny)</span> `H2`
+
+    ### Heading 3 <span class="text-secondary small">(span.small)</span> <span class="text-secondary tiny">(span.tiny)</span> `H3`
+
+    #### Heading 4 <span class="text-secondary small">(span.small)</span> <span class="text-secondary tiny">(span.tiny)</span> `H4`
+
+    ##### Heading 5 <span class="text-secondary small">(span.small)</span> <span class="text-secondary tiny">(span.tiny)</span> `H5`
+
+    ###### Heading 6 <span class="text-secondary small">(span.small)</span> <span class="text-secondary tiny">(span.tiny)</span> `H6`
+
+    Paragraph text: Lorem ipsum dolor sit **bold amet**, consectetur [link adipisicing elit](#), sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis _emphasis nostrud exercitation ullamco laboris nisi ut_ aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    ### Helpers
+
+    A number of helper classes have been created to target text color/alignment or element positioning. Classes ar shown in the table cells.
+
+    #### Semantic Colors
+
+  .table-overflow-wrap
+    %table.left-heading.bordered
+      %tbody
+        %tr
+          %th Text Classes
+          - ["secondary", "primary", "success", "warning", "error"].each do |semantic_name|
+            %td
+              %span{class: "text-#{semantic_name}"} .text-#{semantic_name}
+        %tr
+          %th Label Classes
+          - ["secondary", "primary", "success", "warning", "error"].each do |semantic_name|
+            %td
+              %span.radius{class: "label-#{semantic_name}"} .label-#{semantic_name}
+  %h4 Text Position
+  %table.bordered
+    %tbody
+      %tr
+        %td.text-left
+          %code .text-left
+        %td.text-center
+          %code .text-center
+        %td.text-right
+          %code .text-right
+
+  :markdown
+    #### Other Helpers
+
+    There are other helpers that work with display and floats.
+
+    ##### Display
+
+    * `.inline`
+    * `.block`
+    * `.inline-block`
+    * `.none` and `.hide`
+
+    ##### Floating
+
+    * `.float-right`
+    * `.float-left`
+    * `.clearfix`
+
+    ##### Highlighting text
+
+    You can also <span class="highlighter">highlight some text</span> by wrapping a `<span class="highlighter">` around text inline. If you add semantic classes like for <span class="highlighter error">errors</span> or <span class="highlighter success">success</span>, you can change the color of the highlighter.
+
+    ###### Highlighter Usage
+
+    ~~~html
+    <!--  Basic highlight -->
+    <span class="highlighter">highlight</span>
+
+    <!-- Semantic color highlight -->
+    <span class="highlighter [error, success, primary]">
+    ~~~

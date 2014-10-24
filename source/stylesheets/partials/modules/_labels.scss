@@ -1,0 +1,15 @@
+[class*="label-"] {
+  padding: 5px 7px;
+  line-height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  @extend .radius;
+}
+
+@each $semantic-type, $semantic-color in $semantic-colors {
+  .label-#{$semantic-type} {
+    background: $semantic-color;
+    color: $white;
+  }
+}
+

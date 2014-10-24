@@ -1,0 +1,78 @@
+#topbar.wardrobe-content-section
+  :markdown
+    ## Topbar
+
+    The topbar element is a navigation staple in UI patterns. Here we will handle things like application title, main top level navigation, global search, and some badge like indicators for places to take action.
+
+  = partial "modules/topbar"
+
+  .push-top
+  :markdown
+    #### Usage
+
+    ~~~haml
+    .topbar
+      .title Wardrobe
+      %nav
+        %ul
+          %li= link_to "Menu Item One", "#"
+          %li= link_to "Menu Item Two", "#"
+          %li
+            = link_to "#", class: "icon-after caret-down" do
+              More Menu
+              %span.badge 42
+            %ul.submenu
+              %li= link_to "dropdown item 1", "#"
+              %li= link_to "dropdown item 2", "#"
+              %li
+                = link_to "dropdown item 3", "#", class: "icon-after right"
+                %ul
+                  %li= link_to "flyout 1", "#"
+                  %li= link_to "flyout 2", "#"
+                  %li= link_to "flyout 3", "#"
+              %li
+                = link_to "#" do
+                  dropdown item 4
+                  %span.badge 42
+          %li.search
+            %input(type="text" placeholder="search")
+    ~~~
+  .push-top
+  :markdown
+    The badges in the `.topbar` are `$primary-color` by default when using the `.badge` class by itself. If you add any other semantic class like `[.error, .warning, .success]` it will change the color to match those color variables. Example: <span class="badge">12</span><span class="badge error">4</span><span class="badge warning">23</span><span class="badge success">19</span>
+
+    ### Sub-topbar
+
+    Beneath the main top bar is a sub topbar for additional "global" UI utilities and top-level data filtering like a date range or breadcrumb navigation on the left side of the bar. On the right side, there will be buttons like favoriting/unfavoriting views, generating artifacts for reporting and data export.
+
+  .topbar
+    .title Wardrobe
+  = partial "modules/sub-topbar"
+  .push-top
+  :markdown
+    #### Usage
+
+    The above `.sub-topbar` example is achieved by the following
+
+    ~~~haml
+    .topbar
+      .title Wardrobe
+    .sub-topbar
+      .left-half
+        %form.datepicker
+          %input(type="text" value="09/24/2014 - 09/31/2014")
+        .breadcrumb
+          %ul
+            %li
+              %span.dropdown
+                = link_to "All Parameters", "#"
+                %i.icon.down
+                %ul
+                  %li= link_to "option 1", "#"
+                  %li= link_to "option 2", "#"
+                  %li= link_to "option 3", "#"
+      .right-half.text-right
+        = link_to "", "#", class: "button white icon star favorited"
+        = link_to "Generate PDF", "#", class: "button white icon pdf"
+        = link_to "Export Data", "#", class: "button white icon download"
+    ~~~

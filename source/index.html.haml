@@ -1,0 +1,36 @@
+---
+title: Wardrobe Index
+---
+
+.wardrobe-nav
+  .title
+    %h1 Wardrobe
+  %ul
+    %li= link_to "Welcome", "#welcome"
+    %li= link_to "Colors", "#colors"
+    %li= link_to "Icons", "#icons"
+    %li= link_to "Typography &amp; Helpers", "#typography"
+    %li= link_to "Tables", "#tables"
+    %li= link_to "Topbar", "#topbar"
+    %li= link_to "Breadcrumb", "#breadcrumb"
+    %li= link_to "Dropdown Link", "#dropdown-link"
+    %li= link_to "Buttons", "#buttons"
+    %li= link_to "Tags", "#tags"
+    %li= link_to "Pagination", "#pagination"
+    %li= link_to "Datepicker", "#datepicker"
+
+.wardrobe-content-wrap
+  .wardrobe-content
+    = partial "styleguide/welcome"
+    = partial "styleguide/colors"
+    = partial "styleguide/icons"
+    = partial "styleguide/typography"
+    = partial "styleguide/tables"
+    = partial "styleguide/topbar"
+    = partial "styleguide/breadcrumb"
+    = partial "styleguide/dropdown-link"
+    = partial "styleguide/buttons"
+    = partial "styleguide/tags"
+    = partial "styleguide/pagination"
+    = partial "styleguide/datepicker"
+

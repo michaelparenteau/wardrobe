@@ -1,0 +1,76 @@
+#icons.wardrobe-content-section
+  :markdown
+    ## Icons
+    Application Icons are an icon font titled [FontAwesome](http://fontawesome.io). The font files are stored in the `/icon-fonts` directory and they are accesed by a Sass mixin `@include icon-font($fa-variable);`. Some examples of icons are listed below with their variable names. All the variable names follow a convention without the `fa-` prefix. You can find all the variables defined in the `_font-awesome.scss` file and [see examples of all the icons here](http://fontawesome.io/icons/).
+
+    <em class="highlighter">Also to note:</em> there are over 500 icons in this library. The lilelyhood of any application needing all of them is pretty slim. Right now, icons that are in buttons, styles live in `_buttons.scss`. If we need generic icon classes, the should live in `_font-awesome.scss` where you can find the icon variables listed.
+
+  .swatches
+    .swatch
+      .icon.image
+      %code $image
+    .swatch
+      .icon.bolt
+      %code $bolt
+    .swatch
+      .icon.car
+      %code $car
+    .swatch
+      .icon.bar-chart
+      %code $bar-chart
+    .swatch
+      .icon.bookmark
+      %code $bookmark
+    .swatch
+      .icon.bullhorn
+      %code $bullhorn
+    .swatch
+      .icon.calendar
+      %code $calendar
+    .swatch
+      .icon.envelope
+      %code $envelope
+    .swatch
+      .icon.cloud
+      %code $cloud
+    .swatch
+      .icon.folder
+      %code $folder
+    .swatch
+      .icon.keyboard-o
+      %code $keyboard-o
+    .swatch
+      .icon.file-code-o
+      %code $file-code-o
+
+  :markdown
+    ### Usage
+    Here is an example of the mixin producing a car icon on a `<div class="icon car"></div>` in use:
+
+    ~~~scss
+    .icon {
+      &:before {
+        @extend %icon-font-base;
+      }
+      &.car {
+        @include icon-font($car);
+      }
+    }
+
+    // We apply the font-base rules to a class of "icon" and
+    // the mixin adds the pseudo-element's content value.
+    // The above produces the following css:
+
+    .icon.car:before {
+      content: "\f1b9";
+    }
+    .icon:before {
+      display: inline-block;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    ~~~

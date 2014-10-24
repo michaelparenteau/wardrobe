@@ -1,0 +1,220 @@
+@import "styleguide/syntax";
+
+$wardrobe-nav-bg: #32383e;
+$wardrobe-nav-title-bg: #2D99D3;
+$wardrobe-nav-title-color: #fff;
+$wardrobe-nav-link-color: #9cafbe;
+$wardrobe-nav-link-hover-bg: rgba(255,255,255,0.075);
+$wardrobe-content-wrap-bg: #f4f6f9;
+$wardrobe-content-bg: #fff;
+$wardrobe-heading-color: $oil;
+
+.wardrobe-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  overflow: hidden;
+  min-height: 100%;
+  background: $wardrobe-nav-bg;
+  z-index: 200;
+  .title {
+    padding: 25px 20px;
+    background: $wardrobe-nav-title-bg;
+    color: $wardrobe-nav-title-color;
+    h1 {
+      font-size: 1em;
+      line-height: 1em;
+      margin: 0;
+    }
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    position: absolute;
+    top: 66px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    li {
+      a {
+        @include transition(.2s);
+        color: $wardrobe-nav-link-color;
+        display: block;
+        font-size: .9em;
+        padding: 10px 20px;
+        text-decoration: none;
+        &:hover {
+          background: $wardrobe-nav-link-hover-bg;
+        }
+      }
+    }
+  }
+}
+
+.wardrobe-content-wrap {
+  margin-left: 300px;
+  background: $wardrobe-content-wrap-bg;
+  min-height: 100%;
+  .wardrobe-content {
+    background: $wardrobe-content-bg;
+    padding: 20px 40px;
+    height: 100%;
+    max-width: 800px;
+    h1, h2, h3, h4, h5, h6 {
+      color: $wardrobe-heading-color;
+      code {
+        @extend .inline-code;
+        font-size: 13px  !important;
+        font-weight: $body-font-weight !important;
+        color: $body-color  !important;
+      }
+    }
+  }
+}
+
+.wardrobe-content-section {
+  margin-bottom: 1.14286em;
+  padding-bottom: 1.14286em;
+  border-bottom: 1px solid $border-color;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+code, kbd, pre, samp {
+  font-size: .9em;
+  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+.inline-code {
+  background: $ghost;
+  border-radius: $corner-radius;
+  padding: 3px 5px;
+  border: 1px solid $border-color;
+  font-size: .8em;
+}
+
+p, li, td, .swatch {
+  code {
+    @extend .inline-code;
+  }
+}
+
+div.highlight, .wardrobe-content-section table {
+  margin-bottom: 1.14286em;
+}
+
+div.highlight {
+  overflow: auto;
+  table {
+    margin: 0;
+    tr {
+      border: none;
+    }
+  }
+}
+
+// color palate section
+
+$colors: (
+  "white": $white,
+  ghost: $ghost,
+  light-grey: $light-grey,
+  "grey": $grey,
+  slate: $slate,
+  charcoal: $charcoal,
+  oil: $oil,
+  "black": $black,
+  primary-color: $primary-color,
+  secondary-color: $secondary-color,
+  success-color: $success-color,
+  warning-color: $warning-color,
+  error-color: $error-color,
+  highlighter-color: $highlighter-color
+);
+
+ul.colors {
+  @include container(100%);
+  list-style-type: none;
+  padding: 0;
+  li {
+    @include span(4 of 12 no-gutters);
+    margin-bottom: 10px;
+    &:before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      border-radius: $corner-radius;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.35);
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  @each $class, $bg-color in $colors {
+    li.#{$class} {
+      &:before {
+        background: $bg-color;
+      }
+    }
+  }
+}
+
+// icon swatch section
+.swatches {
+  @include clearfix;
+  @include container(100%);
+  margin-bottom: 1.42866em;
+  .swatch {
+    background: $white;
+    color: $slate;
+    margin-bottom: 10px;
+    @include border-radius(6px);
+    @include span(4 of 12 no-gutter);
+    .icon {
+      height: 24px;
+      display: inline-block;
+    }
+  }
+  .icon {
+    font-size: 1.2em;
+    color: $slate;
+    line-height: 50px;
+    &.image { @include icon-font($image); }
+    &.bolt { @include icon-font($bolt); }
+    &.car { @include icon-font($car); }
+    &.bar-chart { @include icon-font($bar-chart-o); }
+    &.bookmark { @include icon-font($bookmark); }
+    &.bullhorn { @include icon-font($bullhorn); }
+    &.calendar { @include icon-font($calendar); }
+    &.envelope { @include icon-font($envelope); }
+    &.cloud { @include icon-font($cloud); }
+    &.folder { @include icon-font($folder); }
+    &.keyboard-o { @include icon-font($keyboard-o); }
+    &.file-code-o { @include icon-font($file-code-o); }
+  }
+}
+
+@include breakpoint(1024px max-width) {
+  .wardrobe-nav {
+    width: 200px;
+  }
+  .wardrobe-content-wrap {
+    margin-left: 200px;
+    min-width: 750px;
+  }
+}
+
+@include breakpoint(960px max-width) {
+  .wardrobe-nav {
+    width: 100%;
+    position: relative;
+    /*height: 40px;*/
+  }
+  .wardrobe-content-wrap {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}

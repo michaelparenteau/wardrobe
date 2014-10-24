@@ -1,0 +1,77 @@
+%form.datepicker
+  %input(type="text" value="09/24/2014 - 09/30/2014")
+  .datepicker-panel
+    .actions
+      = link_to "today", "#", class: "button"
+      = link_to "yesterday", "#", class: "button"
+      = link_to "last 7 days", "#", class: "button"
+      = link_to "this month", "#", class: "button"
+      = link_to "last month", "#", class: "button"
+      .clearfix
+        .left-half
+          %label From
+          %input(type="text" value="9/24/2014")
+        .right-half
+          %label To
+          %input(type="text" value="9/30/2014")
+      = link_to "Apply", "#", class: "button success inline-block"
+      = link_to "cancel", "#", class: "button inline-block cancel"
+    - 2.times do
+      .calendar
+        %table
+          %caption
+            %h3
+              %i.icon.prev.float-left
+              September
+              %i.icon.next.float-right
+          %thead
+            %tr
+              %th Sun
+              %th Mon
+              %th Tue
+              %th Wed
+              %th Thu
+              %th Fri
+              %th Sat
+          %tbody
+            %tr
+              %td.outside-month 31
+              %td 1
+              %td 2
+              %td 3
+              %td 4
+              %td 5
+              %td 6
+            %tr
+              %td 7
+              %td 8
+              %td 9
+              %td 10
+              %td 11
+              %td 12
+              %td 13
+            %tr
+              %td 14
+              %td 15
+              %td 16
+              %td 17
+              %td 18
+              %td 19
+              %td 20
+            %tr
+              %td 21
+              %td 22
+              %td 23
+              %td.selected 24
+              %td.in-range 25
+              %td.in-range 26
+              %td.in-range 27
+            %tr
+              %td.in-range 28
+              %td.in-range 29
+              %td.selected 30
+              %td.outside-month 1
+              %td.outside-month 2
+              %td.outside-month 3
+              %td.outside-month 4
+

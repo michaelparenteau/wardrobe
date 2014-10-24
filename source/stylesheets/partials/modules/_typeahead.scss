@@ -1,0 +1,35 @@
+ul.typeahead-selector {
+  position: absolute;
+  background: $white;
+  min-width: 100%;
+  z-index: 10000;
+  margin: 0;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  @include box-shadow(1px 1px 3px rgba(0,0,0,0.35));
+  @extend .radius;
+  li {
+    float: none;
+    display: block;
+    height: auto;
+    line-height: 1;
+    &.hover a, a:hover {
+      background: $ghost;
+      color: $charcoal !important;
+    }
+    a {
+      display: block;
+      text-decoration: none;
+      color: $slate;
+      @include transition(.2s);
+      padding: 5px 20px 5px 5px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+  }
+  .topbar & {
+    right: 10px;
+    top: calc(100% - 5px);
+  }
+}

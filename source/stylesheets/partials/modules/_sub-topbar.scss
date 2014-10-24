@@ -1,0 +1,9 @@
+.sub-topbar {
+  @include pie-clearfix;
+  font-size: .8em;
+  background: $light-grey;
+  padding: 10px;
+  .breadcrumb, .datepicker {
+    display: inline-block;
+  }
+}

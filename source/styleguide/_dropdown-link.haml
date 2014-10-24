@@ -1,0 +1,21 @@
+#dropdown-link.wardrobe-content-section
+  :markdown
+    ## Dropdown Link
+
+    If you wrap a link in a `<span class="dropdown">` you can hide a list of navigation options that is accessed when hovered.
+
+  = partial "modules/dropdown-link"
+
+  .push-top
+  :markdown
+    #### Usage
+
+    ~~~haml
+    %span.dropdown
+      = link_to "Dropdown Link", "#"
+      %i.icon.caret-down
+      %ul
+        %li= link_to "option 1", "#"
+        %li= link_to "option 2", "#"
+        %li= link_to "option 3", "#"
+    ~~~

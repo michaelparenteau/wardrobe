@@ -1,0 +1,14 @@
+#tables.wardrobe-content-section
+  :markdown
+    ## Tables
+
+    There are a couple of different table styles we get by adding a class to the `<table>` element. We wrap tablesx with `<div class="table-overflow-wrap">` to handle horizontal scrolling and displaying lots of columns without the data becoming unreadable.
+
+  %h3 Basic Table
+  = partial "modules/tables/basic"
+
+  %h3 Striped & Sortable Table
+  = partial "modules/tables/sortable"
+
+  %h3 Left Heading
+  = partial "modules/tables/left-heading"

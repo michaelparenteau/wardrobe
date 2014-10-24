@@ -1,0 +1,33 @@
+#breadcrumb.wardrobe-content-section
+  :markdown
+    ## Breadcrumb
+
+    To show where a user is and provide a way for them to navigate back through parent categories there is a breadcrumb component. This could be combined with dropdown links to quickly get to a category siblings.
+
+  = partial "modules/breadcrumb"
+
+  .push-top
+  :markdown
+    #### Usage
+
+    ~~~haml
+    .breadcrumb
+      %ul
+        %li= link_to "parent category", "#"
+      %li
+        %span.dropdown
+          = link_to "parent category dropdown", "#"
+          %i.icon.caret-down
+          %ul
+            %li= link_to "option 1", "#"
+            %li= link_to "option 2", "#"
+            %li= link_to "option 3", "#"
+        %li
+          %span.dropdown
+            = link_to "all parameters", "#"
+            %i.icon.caret-down
+            %ul
+              %li= link_to "option 1", "#"
+              %li= link_to "option 2", "#"
+              %li= link_to "option 3", "#"
+    ~~~

@@ -1,0 +1,62 @@
+// This file is a manifest. Only imports should exist in this file
+// except for the scratchpad section on the bottom (which should
+// eventually be refactored out of the file into its appropriate place).
+//
+// Also, modules should follow a naming convention. Class, .scss & .haml
+// names should be the same. Example: .top-bar class should live in
+// /source/stylesheets/partials/modules/_top-bar.scss and
+// /source/partials/modules/_top-bar.haml files.
+
+@charset "utf-8";
+
+// google fonts
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,300,600);
+
+// Use compass for mixins and other cross-browser front-end solutions
+// docs: http://compass-style.org
+@import "compass";
+@import "compass/css3";
+
+@import "susy"; // grid math gem
+@import "breakpoint"; // media-query mixins
+
+// Sort of like reset but more modern and sensible
+@import "normalize"; // v3.0.1
+
+// 3rd party stuff
+@import "partials/vendor/font-awesome"; // icon fonts (http://fontawesome.io)
+
+// Partials
+@import "partials/variables"; // Colors, measurments, base fonts, etc.
+@import "partials/helpers"; // style class hacks
+
+// Base HTML styles (Tables, Forms, Lists, Headings/Type)
+@import "partials/base/html-body";
+@import "partials/base/typography";
+@import "partials/base/tables";
+@import "partials/base/forms";
+
+// Components like buttons, labels, topbar
+@import "partials/modules/topbar";
+@import "partials/modules/sub-topbar";
+@import "partials/modules/labels";
+@import "partials/modules/badges";
+@import "partials/modules/breadcrumb";
+@import "partials/modules/dropdown";
+@import "partials/modules/buttons";
+@import "partials/modules/tags";
+@import "partials/modules/pagination";
+@import "partials/modules/datepicker";
+@import "partials/modules/typeahead";
+
+// Sections and Pages
+// @import "partials/regions/";
+
+// Wardrobe styleguide styles (comment out or remove if not needed)
+@import "styleguide/wardrobe";
+
+// =======================================================================
+// Scratchpad: a CSS playground or "inbox" to be refactored later.
+// =======================================================================
+
+

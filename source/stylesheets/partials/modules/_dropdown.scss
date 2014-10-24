@@ -1,0 +1,50 @@
+.dropdown {
+  position: relative;
+  padding: 5px 0 5px 5px;
+  i.caret-down {
+    @include icon-font($caret-down);
+    margin: 0 5px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    color: $slate;
+    &:before {
+      top: -2px;
+      position: relative;
+    }
+  }
+  ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    background: $white;
+    border-radius: $corner-radius;
+    min-width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    @include box-shadow(0px 1px 1px rgba(0,0,0,0.1));
+    li {
+      white-space: nowrap;
+      line-height: 1;
+      a {
+        display: block;
+        padding: 3px 5px;
+        text-decoration: none;
+        &:hover {
+          background: $ghost;
+        }
+      }
+    }
+  }
+  &:hover {
+    background: $white;
+    @include border-top-radius($corner-radius);
+    a {
+      text-decoration: none;
+    }
+    ul {
+      display: block;
+    }
+  }
+}

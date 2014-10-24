@@ -1,0 +1,32 @@
+.pagination {
+  text-align: center;
+  margin: 10px;
+  a {
+    @extend .button;
+    padding: 5px;
+  }
+  .disabled, .current {
+    &:hover {
+      cursor: default;
+    }
+  }
+  .disabled, .disabled:hover {
+    color: $slate;
+    background: transparent !important;
+    text-decoration: none;
+  }
+  .current, &.current:hover {
+    background: $secondary-color !important;
+    color: $white !important;
+  }
+  .prev {
+    margin-right: 10px;
+  }
+  .next {
+    margin-left: 10px;
+  }
+  span {
+    margin: 0 10px;
+    color: $slate;
+  }
+}

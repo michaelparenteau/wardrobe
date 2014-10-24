@@ -1,0 +1,24 @@
+#colors.wardrobe-content-section
+  :markdown
+    ## Colors
+    Wardrobe uses [Sass](http://sass-lang.com) and so colors have been variablized. Below are the colors that are greyscale and semantic colors for action and attention. Use the `$variable-name` when defining a color versus the hex, rgb, hsl definitions. If you need to add a color to the palette, add it to the `_variables.scss` file.
+
+    ### Greyscale colors
+
+    Colors for backgrounds, text colors, border colors, etc.
+
+  %ul.colors
+    - ["white", "ghost", "light-grey", "grey", "slate", "charcoal", "oil", "black"].each do |color|
+      %li{class: color}
+        %code $#{color}
+
+  :markdown
+    ### Semantic Colors
+
+    Colors for alerts, buttons, and general action or attention messaging.
+
+  %ul.colors
+    - ["primary-color", "secondary-color", "success-color", "warning-color", "error-color", "highlight-color"].each do |color|
+      %li{class: color}
+        %code $#{color}
+

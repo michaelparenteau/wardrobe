@@ -1,0 +1,16 @@
+.sub-topbar
+  = partial "modules/datepicker"
+  .breadcrumb
+    %ul
+      %li
+        .dropdown
+          = link_to "All Parameters", "#"
+          %i.icon.caret-down
+          %ul
+            %li= link_to "option 1", "#"
+            %li= link_to "option 2", "#"
+            %li= link_to "option 3", "#"
+  .float-right.text-right
+    = link_to "", "#", class: "button white icon star favorited"
+    = link_to "Generate PDF", "#", class: "button white icon pdf"
+    = link_to "Export Data", "#", class: "button white icon download"

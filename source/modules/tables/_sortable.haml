@@ -1,0 +1,25 @@
+.table-overflow-wrap
+  %table.striped.sortable
+    %thead
+      %tr.dummy-data
+        %th.sort-down Name
+        %th Occupation
+        %th Location
+        %th Favorite Food
+    %tbody
+      - (multiplyer ||= 1).times do
+        %tr.dummy-data
+          %td Popeye Sailorman
+          %td Sailor Man
+          %td Boat on an Ocean
+          %td Spinach
+        %tr.dummy-data
+          %td Buddy Elf
+          %td Santa's Helper
+          %td North Pole
+          %td Sugar
+        %tr.dummy-data
+          %td Elvis Presley
+          %td King of Rock
+          %td Memphis, TN
+          %td Bacon

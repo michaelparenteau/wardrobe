@@ -1,0 +1,25 @@
+.breadcrumb {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  > ul > li {
+    display: inline-block;
+    &:after {
+      content: " / ";
+      color: $slate;
+      text-decoration: none;
+    }
+    &:last-child {
+      a {
+        color: $slate;
+        text-decoration: none;
+      }
+      &:after {
+        content: "";
+      }
+    }
+  }
+}
+

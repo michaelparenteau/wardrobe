@@ -1,0 +1,73 @@
+%button-base {
+  display: inline-block;
+  border: none;
+  line-height: 1;
+  text-decoration: none;
+  outline: none;
+  font-size: 13px;
+  @include transition(.2s);
+}
+
+@mixin button($color, $bg) {
+  color: $color;
+  background: $bg;
+  &:hover {
+   background: darken($bg, 10%);
+  }
+}
+
+.button {
+  @extend .radius;
+  @extend %button-base;
+  @include button($slate, $light-grey);
+  padding: 10px 20px;
+  margin-right: 5px;
+  .text-right & {
+    margin-right: 0;
+    margin-left: 5px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &.white {
+    @include button($slate, $white);
+    @include box-shadow(0 1px 1px rgba(0,0,0,0.1));
+    &:hover {
+      background: #f7f7f7; //Todo: variablize and add to color styles
+    }
+  }
+  &.primary {
+    @include button($white, $primary-color);
+  }
+  &.secondary {
+    @include button($slate, $light-grey);
+  }
+  &.warning {
+    @include button($white, $warning-color);
+  }
+  &.success {
+    @include button($white, $success-color);
+  }
+  &.error {
+    @include button($white, $error-color);
+  }
+  &.icon:before {
+    margin-right: 5px;
+  }
+  &.star {
+    @include icon-font($star);
+    padding: 10px;
+    &.favorited {
+      color: $warning-color;
+    }
+    &:before {
+      margin: 0;
+    }
+  }
+  &.pdf {
+    @include icon-font($file-pdf-o);
+  }
+  &.download {
+    @include icon-font($download);
+  }
+}
