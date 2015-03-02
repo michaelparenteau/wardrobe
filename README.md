@@ -14,7 +14,7 @@ To run the site locally and develop, in the command line, `cd` into this
 project directory and run:
 
 ```
-Gem install bundler
+gem install bundler
 bundle install
 bundle exec middleman
 ```
